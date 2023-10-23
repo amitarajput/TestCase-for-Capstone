@@ -35,8 +35,9 @@ jobs:
       with:
         java-version: '17.0.x'
 
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v2
+    - name: Build and Test
+      run: |
+       mvn clean install
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
